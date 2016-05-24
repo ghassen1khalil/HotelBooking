@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_search_hotel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.android.com.hotelbooking.SearchHotelActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="0dp"
+        app:layout_constraintTop_toTopOf="@+id/activity_search_hotel"
+        tools:layout_constraintTop_creator="0"></LinearLayout>
+</android.support.constraint.ConstraintLayout>
