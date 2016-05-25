@@ -5,7 +5,7 @@
     android:id="@+id/activity_search_hotel"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="app.android.com.hotelbooking.SearchHotelActivity"
+    tools:context="app.android.com.hotelbooking.View.SearchHotelActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="81dp">
 
