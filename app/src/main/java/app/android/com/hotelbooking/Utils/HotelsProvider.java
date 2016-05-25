@@ -22,7 +22,7 @@ import java.util.HashMap;
 public class HotelsProvider extends ContentProvider {
 
     static final String PROVIDER_NAME = "app.android.com.hotelbooking.Utils.HotelsProvider";
-    static final String URL = "content://" + PROVIDER_NAME + "/geoloc";
+    static final String URL = "content://" + PROVIDER_NAME + "/hotels";
     static final Uri CONTENT_URI = Uri.parse(URL);
 
     static final String _ID = "_id";
@@ -108,9 +108,9 @@ public class HotelsProvider extends ContentProvider {
     public String getType(Uri uri) {
         switch (uriMatcher.match(uri)){
             case HOTEL:
-                return "vnd.android.cursor.dir/vnd.gps.tracking.geoloc";
+                return "vnd.android.cursor.dir/vnd.app.android.com.hotelbooking";
             case HOTEL_ID:
-                return "vnd.android.cursor.item/vnd.gps.tracking.geoloc";
+                return "vnd.android.cursor.item/vnd.app.android.com.hotelbooking";
             default:
                 throw new IllegalArgumentException("URI Inconnue" + uri);
         }

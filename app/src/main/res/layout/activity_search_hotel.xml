@@ -10,43 +10,4 @@
     tools:layout_editor_absoluteY="81dp">
 
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="7dp"
-        android:layout_height="7dp"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="0dp"
-        app:layout_constraintTop_toTopOf="@+id/activity_search_hotel"
-        tools:layout_constraintTop_creator="0"></LinearLayout>
-
-    <Button
-        android:text="Chercher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="278dp"
-        android:id="@+id/search_button"
-        app:layout_constraintLeft_toLeftOf="@+id/activity_search_hotel"
-        tools:layout_constraintLeft_creator="0"
-        app:layout_constraintRight_toRightOf="@+id/activity_search_hotel"
-        tools:layout_constraintRight_creator="0" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text=""
-        android:hint="Taper un nom d'hotel..."
-        android:ems="10"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="212dp"
-        android:id="@+id/editText"
-        app:layout_constraintLeft_toLeftOf="@+id/activity_search_hotel"
-        tools:layout_constraintLeft_creator="0"
-        app:layout_constraintRight_toRightOf="@+id/activity_search_hotel"
-        tools:layout_constraintRight_creator="0"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        android:layout_marginBottom="24dp"
-        tools:layout_constraintBottom_creator="0" />
-
 </android.support.constraint.ConstraintLayout>
