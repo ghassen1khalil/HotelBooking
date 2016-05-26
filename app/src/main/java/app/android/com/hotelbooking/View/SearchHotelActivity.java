@@ -26,6 +26,7 @@ public class SearchHotelActivity extends AppCompatActivity {
         hotelManager.addHotel("Tunis","Med V", "5","75","une photo", "120", "100","34","10");
         hotelManager.addHotel("Hammamet","Sahara Beach", "5","75","une photo", "120", "100","34","10");
         hotelManager.addHotel("Sfax","Arcades", "5","75","une photo", "120", "100","34","10");
+        hotelManager.searchHotels("Sousse");
 
     }
 

@@ -22,7 +22,8 @@ import java.util.HashMap;
 public class HotelsProvider extends ContentProvider {
 
     static final String PROVIDER_NAME = "app.android.com.hotelbooking.Utils.HotelsProvider";
-    static final String URL = "content://" + PROVIDER_NAME + "/hotels";
+
+    static final String URL = "content://" + PROVIDER_NAME + "/hotel";
     static final Uri CONTENT_URI = Uri.parse(URL);
 
     static final String _ID = "_id";
@@ -93,7 +94,7 @@ public class HotelsProvider extends ContentProvider {
                 queryBuilder.appendWhere(_ID+"="+uri.getPathSegments().get(1));
                 break;
             default:
-                throw new IllegalArgumentException("URI Inconnue" + uri);
+                throw new IllegalArgumentException("URI Inconnue " + uri);
         }
         if (sortOrder == null || sortOrder==""){
             sortOrder = NAME;
@@ -208,5 +209,9 @@ public class HotelsProvider extends ContentProvider {
 
     public static Uri getContentUri() {
         return CONTENT_URI;
+    }
+
+    public static String getURL() {
+        return URL;
     }
 }
