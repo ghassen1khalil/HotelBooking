@@ -10,11 +10,29 @@
     tools:layout_editor_absoluteY="81dp">
 
 
-    <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="132dp"
-        tools:layout_editor_absoluteY="248dp"
-        android:id="@+id/searchHotelButton"/>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/hotelToSearchEditText"
+            android:hint="Tapez une région pour y chercher des hôtels"/>
+
+        <Button
+            android:text="Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="132dp"
+            tools:layout_editor_absoluteY="248dp"
+            android:id="@+id/searchHotelButton"/>
+    </LinearLayout>
+
+
 </android.support.constraint.ConstraintLayout>
