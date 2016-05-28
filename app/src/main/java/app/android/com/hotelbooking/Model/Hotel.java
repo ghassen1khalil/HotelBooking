@@ -1,20 +1,22 @@
 package app.android.com.hotelbooking.Model;
 
+import java.io.Serializable;
+
 import app.android.com.hotelbooking.Utils.Geocoordinates;
 
 /**
  * Created by ghassen.ati on 25/05/2016.
  */
 
-public class Hotel {
+public class Hotel implements Serializable{
 
     private int id;
     private String location;
     private String name;
-    private int starsRating;
-    private double price;
-    private double discountPrice;
-    private int score;
+    private Integer starsRating;
+    private Double price;
+    private Double discountPrice;
+    private Integer score;
     private String photo;
     private Geocoordinates geocoordinates;
 
@@ -22,7 +24,7 @@ public class Hotel {
         super();
     }
 
-    public Hotel(int id, String location, String name, int starsRating, double price, double discountPrice, int score, String photo, Geocoordinates geocoordinates) {
+    public Hotel(int id, String location, String name, Integer starsRating, Double price, Double discountPrice, Integer score, String photo, Geocoordinates geocoordinates) {
         this.id = id;
         this.location = location;
         this.name = name;
@@ -32,6 +34,14 @@ public class Hotel {
         this.score = score;
         this.photo = photo;
         this.geocoordinates = geocoordinates;
+    }
+
+    public Hotel( String name, Integer starsRating, Double price, Double discountPrice) {
+        this.name = name;
+        this.starsRating = starsRating;
+        this.price = price;
+        this.discountPrice = discountPrice;
+
     }
 
     public int getId() {
@@ -58,35 +68,35 @@ public class Hotel {
         this.name = name;
     }
 
-    public int getStarsRating() {
+    public Integer getStarsRating() {
         return starsRating;
     }
 
-    public void setStarsRating(int starsRating) {
+    public void setStarsRating(Integer starsRating) {
         this.starsRating = starsRating;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public double getDiscountPrice() {
+    public Double getDiscountPrice() {
         return discountPrice;
     }
 
-    public void setDiscountPrice(double discountPrice) {
+    public void setDiscountPrice(Double discountPrice) {
         this.discountPrice = discountPrice;
     }
 
-    public int getScore() {
+    public Integer getScore() {
         return score;
     }
 
-    public void setScore(int score) {
+    public void setScore(Integer score) {
         this.score = score;
     }
 
@@ -104,6 +114,11 @@ public class Hotel {
 
     public void setGeocoordinates(Geocoordinates geocoordinates) {
         this.geocoordinates = geocoordinates;
+    }
+
+    @Override
+    public String toString() {
+        return "Nom: "+this.name + " | "+this.starsRating+" Etoiles | Prix intilal: "+ this.price + " | Nouveau Prix: "+this.discountPrice;
     }
 
 }

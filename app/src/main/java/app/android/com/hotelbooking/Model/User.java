@@ -1,10 +1,12 @@
 package app.android.com.hotelbooking.Model;
 
+import java.io.Serializable;
+
 /**
  * Created by ASUS on 25/05/2016.
  */
 
-public class User {
+public class User implements Serializable{
 
     private String firstName;
     private String lastName;
@@ -42,5 +44,10 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Nom: "+this.lastName  + " | Prénom: "+this.firstName+ " | Email: "+ this.email;
     }
 }

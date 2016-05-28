@@ -13,7 +13,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import app.android.com.hotelbooking.Model.Hotel;
 import app.android.com.hotelbooking.R;
 import app.android.com.hotelbooking.Utils.HotelsProvider;
 
@@ -39,20 +41,31 @@ public class HotelListActivity extends AppCompatActivity implements LoaderManage
         setLocation(bundle.getString("location"));
         mListView = (ListView) findViewById(R.id.hotelsListview);
 
-        String[] from =  new String[]{HotelsProvider.getNAME(),HotelsProvider.getSTARSRATING(),
+        String[] from = new String[]{HotelsProvider.getNAME(), HotelsProvider.getSTARSRATING(),
                 HotelsProvider.getPRICE(), HotelsProvider.getDISCOUNTPRICE()};
         int[] to = new
                 int[]{R.id.nameTextView, R.id.starsRatingTextView, R.id.priceTextView, R.id
                 .discountPriceTextView};
 
-        mAdapter = new SimpleCursorAdapter(getBaseContext(), R.layout.listview_item_layout, null,from, to,0);
+        mAdapter = new SimpleCursorAdapter(getBaseContext(), R.layout.listview_item_layout, null, from, to, 0);
         mListView.setAdapter(mAdapter);
-        getSupportLoaderManager().initLoader(0,null,this);
+        getSupportLoaderManager().initLoader(0, null, this);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.i(TAG,"Elèment num "+position+" est cliqué");
+
+                TextView nameTextView = (TextView) view.findViewById(R.id.nameTextView);
+                TextView starsRatingTextView = (TextView) view.findViewById(R.id.starsRatingTextView);
+                TextView priceTextView = (TextView) view.findViewById(R.id.priceTextView);
+                TextView discountPriceTextView = (TextView) view.findViewById(R.id.discountPriceTextView);
+
+                Hotel hotel = new Hotel(nameTextView.getText().toString(), Integer.parseInt(starsRatingTextView.getText().toString()), Double.parseDouble(priceTextView.getText().toString()), Double.parseDouble(discountPriceTextView.getText().toString()));
+
+                Intent bookingIntent = new Intent(HotelListActivity.this,SelectedHotelActivity.class);
+                bookingIntent.putExtra("theHotel",hotel);
+                startActivity(bookingIntent);
+                Log.i(TAG, hotel.toString());
 
             }
         });
